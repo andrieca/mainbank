@@ -1,0 +1,29 @@
+.contacts-search{
+    border-radius: 15px;
+// border: 1px solid #1A1A1A;
+// opacity: 0.1;
+// background: #FFF;
+padding: 2px;
+margin: 20px 0;
+}
+.contacts-btn{
+    display: flex;
+    justify-content: end;
+   
+    button{
+        // margin: 0 2px;
+        // img{
+        //     width: 34.5px;
+        //     height: 34.5px;
+        // }
+    }
+}
+
+
+
+// let navigate = useNavigate();
+// import { useNavigate } from "react-router-dom";
+// const handleBack = () => {
+//     navigate(-1);
+//   };
+// navigate("/transactions/sendform");

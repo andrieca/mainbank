@@ -1,0 +1,87 @@
+.dashbord-profile{
+    background-image: url("../../../../assets/dashbordImg/Background\ \(1\).svg");
+    height: 20%;
+    width: 100%;
+}
+.dashbord-profile-container{
+    margin: 0 30px 0 30px;
+    padding: 38px 0;
+    width: auto;
+    height: 100%;
+    .dashbord{
+        display: flex;
+        justify-content: space-between;
+        h3{
+            color: #FFF;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 150% */
+        }
+        img{
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            // background: url("../../../../assets/dashbordImg/Profile\ Picture.jpg"), lightgray 50% / cover no-repeat;
+        }
+    }
+    .bio{
+        margin-top: 25px;
+        h4{
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.5;
+            line-height: 24px; /* 150% */
+        }
+        h3{
+            // margin-top: 8px;
+            color: #FFF;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 150% */
+        }
+    }
+    .dashbord-balance{
+        display: flex;
+        justify-content: space-between;
+        // margin-top: 8px;
+        height: 40px;
+        color: #FFF;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 40px; /* 100% */
+        button{
+            padding-top: 5%;
+        }
+    }
+}
+.send-request{
+    padding: 25px 10px;
+}
+.last-transactions{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    span{
+        color: #1A1A1A;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+    }
+    button{
+        color: #3491DB;
+        text-align: right;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+}

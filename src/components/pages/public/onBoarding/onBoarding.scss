@@ -1,0 +1,31 @@
+.boarding{
+    height: 100%;
+    width: 375px;
+    background-image: url('./../../../../assets/Background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    // display: flex;
+    // align-items: center;
+    margin: 0 auto;
+    padding-top: 20px;
+
+}
+
+.boardBtn{
+margin-top: 130px;
+}
+.boardP{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // justify-content: center;
+    padding-top: 150px;
+}
+img{
+    // margin-top: 212px;
+}
+.p1{
+    padding-top: 50px;
+    color: white;
+}

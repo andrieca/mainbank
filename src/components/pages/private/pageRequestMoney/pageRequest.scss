@@ -1,0 +1,92 @@
+.listSendMoney{
+    form{
+        margin-top: 50px;
+        input{
+            height: 49px;
+            border-radius: 10px;
+            border: 1px solid rgba(26, 26, 26, 0.10);
+            background: #FFF;
+            padding-left: 10px;
+        }
+        .input-color{
+            border: 1px solid rgb(26, 135, 221);
+            color: #1A87DD;
+            // font-size: 16px;
+            // font-style: normal;
+            // font-weight: 600;
+            // line-height: 24px; /* 150% */
+        }
+        footer{
+            margin-top: 100px;
+        }
+        label{
+            color: #1A1A1A;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px; /* 150% */
+        }
+        .footer-form{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+            position: fixed;
+            bottom: 0;
+            width: 93.5%;
+            padding: 20px 0;
+            // width: 90%;
+            height: 12%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.03);
+        }
+    }
+    .row{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .list-transactions{
+        display: flex;
+        justify-content: space-between;
+        margin: 27px 0px;
+        padding-bottom: 5px;
+        .avatar-transactions{
+            img{
+                padding-right: 0;
+                padding-left: 0;
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+                border-radius: 20px;
+                // background: url("../../../../assets/dashbordImg/Profile\ Picture.jpg"), lightgray 50% / cover no-repeat;
+            }
+        }
+        .bio-transactions{
+            display: flex;
+            flex-direction: column;
+            .username{
+                color: #1A1A1A;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 21px; /* 150% */
+            }
+            .date{
+                color: #1A1A1A;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px; /* 150% */
+                opacity: 0.4;
+            }
+    
+        }
+    }
+}
