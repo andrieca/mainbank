@@ -1,6 +1,6 @@
-# BaoBank
+# MainBank
 
-BaoBank - your financial satellite!
+MainBank - your financial satellite!
 
 ## Available Scripts
 

@@ -8,7 +8,7 @@ import "./layout.scss";
 function PrivateLayout() {
     return (
         <div className="private__layout">
-            <HeaderPrivate />
+            {/* <HeaderPrivate /> */}
             <main className="main">
                 <Outlet />
             </main>

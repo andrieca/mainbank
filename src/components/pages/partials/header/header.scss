@@ -1,15 +1,24 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10px 40px 10px;
-  background-color: #272643;
-  color: white;
-  &__icons {
-    display: flex;
-    column-gap: 20px;
-  }
-  &__icon {
-    cursor: pointer;
-  }
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding: 20px 10px 40px 10px;
+  // background-color: #fff;
+  // color: black;
+  // border-bottom: 1px solid #000;
+  // &__icons {
+  //   display: flex;
+  //   column-gap: 20px;
+  //   align-self: flex-end;
+  // }
+  // &__icon {
+  //   cursor: pointer;
+  // }
+  border-bottom: 1px solid #c2bdbd;
+  background: #FFF;
+  padding-top: 15px;
 }
+// p {
+//   display: flex;
+//   align-self: flex-end;
+// }
