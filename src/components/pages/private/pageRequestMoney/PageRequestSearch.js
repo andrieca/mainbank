@@ -2,9 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import pageContactsStore from '../pageContacts/PageContactsStore';
-import PrimaryBtnYellow from '../../../designComponents/PrimaryBtnYellow';
-import sendIcon from "../../../../assets/contactsImg/send_button.svg";
-import { useParams } from "react-router-dom";
 import back_icon from "../../../../assets/navImg/back_icon.svg";
 import "./pageRequest.scss";
 
@@ -22,12 +19,17 @@ const PageRequestSearch = observer(() => {
     const [searchedUsername, setSearchedUsername] = useState("");
     const [selectedUser, setSelectedUser] = useState(null);
 
+
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+
  
     const styleBtn = {
         borderRadius: "10px",
         backgroundColor: "#1A87DD",
         padding: "13px",
-        // marginTop: '5px',
         color: "#FFF",
         textTransform: 'none',
         textAlign: "center",
@@ -38,12 +40,8 @@ const PageRequestSearch = observer(() => {
         width: "100%",
     }
 
-    // const handleSearchInputChange = (event) => {
-    //     setSearchedUsername(event.target.value);
-    // };
     const handleSearchInputChange = (event) => {
         const newValue = event.target.value;
-        console.log('newValue:', newValue); // Виведення в консоль для перевірки значення
         setSearchedUsername(newValue);
     };
 
@@ -55,6 +53,7 @@ const PageRequestSearch = observer(() => {
             console.log("item", item)
             pageRequestStor.addUserContact(item);
             pageRequestStor.userId = item._id;
+            pageRequestStor.setTrDate(`${formattedDate}  ${hours}:${minutes}`);
             
         } else {
             console.error("User not found");
@@ -68,7 +67,6 @@ const PageRequestSearch = observer(() => {
             console.error("User data not found");
             return;
         }
-        // Ваш код для виконання POST запиту з requestData
         const token = localStorage.getItem("jwt");
 
         axios.post("http://49.13.31.246:9191/transaction", requestData, {
@@ -93,10 +91,10 @@ const PageRequestSearch = observer(() => {
             <HeaderPrivat text={"Request Money"} iconSt={<img src={back_icon} alt="pay" />} destination={destination} />
             <div className='contacts-search'>
                 <InputSearch users={pageContactsStore.users} onChange={handleSearchInputChange} value={searchedUsername} />
-                <button onClick={handleSearchUser}>Search User</button>
+                <button className="form-label label" onClick={handleSearchUser}>Search User</button>
             </div>
             
-            <div className="listSendMoney">
+            <div className="listRequestMoney">
                 {pageRequestStor.userContact.map((item) => (
                     <div className="row list-transactions" key={item._id}>
                         <div className="col-auto avatar-transactions" id='send_avatarImg'>
@@ -126,15 +124,11 @@ const PageRequestSearch = observer(() => {
                             id="exampleFormControlTextarea1"
                             {...register("trDate")}
                             onChange={(e) => pageRequestStor.setTrDate(e.target.value)}
+                            defaultValue={`${formattedDate}  ${hours}:${minutes}`}
                             placeholder="Date"
                             rows="3"></textarea>
                     </div>
                     <footer className="footer-form">
-                        {/* <PrimaryBtnYellow
-                            text="Send Payment"
-                            icon={<img src={sendIcon} alt='pay' />}
-                            type="submit"
-                            className="btn btn-primary"/> */}
                                 <ModalMoney 
                                 style={styleBtn} 
                                 text="Request Payment"

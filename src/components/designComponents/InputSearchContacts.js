@@ -1,11 +1,9 @@
 
 import React from 'react';
-import search_grey from "../../assets/navImg/search_icon_grey (1).svg";
 import "./inputSearch.scss";
 import pageContactsStore from '../pages/private/pageContacts/PageContactsStore';
 
 function InputSearchContacts(props) {
-    // const { value, onChange } = props;
 
     const handleInputChange = (event) => {
         props.onChange(event.target.value);
@@ -20,6 +18,7 @@ function InputSearchContacts(props) {
     );
 
     return (
+        // <div className='container'>
         <div className="input-container">
             <input
                 className="form-control"
@@ -33,7 +32,6 @@ function InputSearchContacts(props) {
                     background: props.value ? "transparent" : "#FFF",
                 }}
             />
-            <img src={search_grey} alt='pay' className="search-icon" />
             <datalist id="datalistOptions">
                 {filteredUsers.map((item) => (
                     <option 
@@ -44,6 +42,7 @@ function InputSearchContacts(props) {
                 ))}
             </datalist>
         </div>
+        // </div>
     );
 }
 

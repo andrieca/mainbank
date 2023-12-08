@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
-import InputSearch from '../../../designComponents/InputSearch';
 import HeaderPrivate from '../../partials/header/HeaderPrivate';
 import add_icon from "../../../../assets/navImg/add_icon.svg";
 import "./pageContacts.scss";
 import { observer } from 'mobx-react';
 import pageContactsStore from './PageContactsStore';
-import PrimaryBtnYellow from '../../../designComponents/PrimaryBtnYellow';
-import send_icon from "../../../../assets/dashbordImg/send_icon.svg";
 import sendIcon from "../../../../assets/contactsImg/send_button.svg";
 import requestIcon from "../../../../assets/contactsImg/Request Button.svg";
 import { Link } from 'react-router-dom';
@@ -50,10 +47,11 @@ const PageContactsView = observer(() => {
     return (
         <div className='container'>
             <HeaderPrivate text={"Contacts"} iconEnd={<img src={add_icon} alt="pay" />}/>
+
             <div className='contacts-search'>
                 <InputSearchContacts  value={searchText} onChange={handleChange}/>
             </div>
-            <div className="list">
+            <div className="list ">
 
                 {filteredUsers.map((item) => (
                     <div className="row list-transactions" key={item._id} >
@@ -69,12 +67,10 @@ const PageContactsView = observer(() => {
                             <span className="username">{item.fullName}</span>
                             <span className="date">{item.username}</span>
                         </div>
-                        <div className="col-2 contacts-btn">
+                        <div className="col-4 contacts-btn">
                             <Link to={`/send_money/${item._id}`} className=''>
                                 <button  ><img src={sendIcon} alt='pay' /></button>
                             </Link>
-                        </div>
-                        <div className="col-2">
                             <Link to={`/request_money/${item._id}`}>
                                 <button><img src={requestIcon} alt='pay' /></button>
                             </Link>
@@ -89,3 +85,4 @@ const PageContactsView = observer(() => {
 
 
 export default PageContactsView;
+

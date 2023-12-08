@@ -7,11 +7,17 @@ import show from "../../../../assets/signInImg/view_icon.svg";
 import hide from "../../../../assets/signInImg/eye-slash.svg"
 
 
-const SignInView = observer(({value, onChange}) => {
+const SignInView = observer(() => {
   const { register, handleSubmit, watch, reset } = useForm();
-  const [showPassword, setShowPassword] = useState(false);
+
   const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
+    const showBtn = document.querySelector(".password_button");
+    const showBtnImg = showBtn.querySelector("img");
+    const passwordInput = document.querySelector(".password_input");
+
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    showBtnImg.src = passwordInput.type === "password" ? show : hide;
+
   };
 
   const submitedData = (data) => {
@@ -63,8 +69,9 @@ const SignInView = observer(({value, onChange}) => {
             </div>
             <div className="user-box">
               <label>Password</label>
-              <div>
+              <div className='input-show'>
                 <input
+                  className='password_input'
                   type="password"
                   placeholder="Enter your password"
                   name="password"
@@ -72,9 +79,12 @@ const SignInView = observer(({value, onChange}) => {
                   onChange={(e) => signIn.setPassword(e.target.value)}
                 />
 
-                <button onClick={handleTogglePassword}>
+                <button 
+                className='password_button' 
+                onClick={handleTogglePassword}
+                type='button'>
 
-                  <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
+                  <img src={hide} alt='Show'/>
                 </button>
               </div>
 
@@ -96,3 +106,6 @@ const SignInView = observer(({value, onChange}) => {
 }
 )
 export default SignInView;
+
+
+

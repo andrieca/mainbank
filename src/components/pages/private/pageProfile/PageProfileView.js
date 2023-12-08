@@ -1,5 +1,4 @@
 import React from 'react';
-import ModalProfileView from '../../partials/modal/ModalProfileView';
 import Profile from '../profile/Profile';
 import "./pageProfile.scss";
 import profile_icon from "../../../../assets/profileImg/profile_icon.svg";

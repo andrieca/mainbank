@@ -40,20 +40,7 @@ const ModalMoney = ({style, iconM, text, textP}) => {
       style={style}
       icon={iconM}
       >{text}</button>
-      {/* <Button
-      onClick={handleEditClick} 
-      style={style}
-      icon ={iconM}>
-      
-       <Typography>{text}</Typography>
-      </Button> */}
-
-      {/* <ModalProfileStor
-        show={showEditModal}
-        handleClose={handleCloseEditModal}
-        userData={userData}
-        onSubmit={handleProfileEdit}
-      /> */}
+   
       <Modal show={showEditModal} onHide={handleCloseEditModal}>
       <Modal.Header closeButton>
         <Modal.Title></Modal.Title>
@@ -61,7 +48,7 @@ const ModalMoney = ({style, iconM, text, textP}) => {
       <Modal.Body>
         <Form>
           <Form.Group >
-            <Form.Label><img src={send_illustration} alt="pay"/>
+            <Form.Label><img className="img-" src={send_illustration} alt="pay"/>
             <div>{textP}</div>
             </Form.Label>
           </Form.Group>
@@ -74,9 +61,6 @@ const ModalMoney = ({style, iconM, text, textP}) => {
         Ok, Thanks!
         </Button>
         </Link>
-        {/* <Button variant="primary" >
-          Save Changes
-        </Button> */}
       </Modal.Footer>
     </Modal>
     </div>

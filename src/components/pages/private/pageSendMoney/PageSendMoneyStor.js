@@ -12,15 +12,24 @@ class PageSendMoneyStor {
 
   userContact = [];
 
+
+   currentDate = new Date();
+   formattedDate = this.currentDate.toLocaleDateString();
+   hours = this.currentDate.getHours();
+   minutes = this.currentDate.getMinutes();
+   
+
   constructor() {
     makeAutoObservable(this);
   }
 
   addUserContact(item) {
-    this.userContact.push(item);
-    console.log("sendContact", this.userContact)
-   
+    this.userContact.push(item); 
   }
+
+  // clearUserContact() {
+  //   this.userContact = [];
+  // }
 
   setAmount(amountPage) {
     this.amount = amountPage;
@@ -29,7 +38,6 @@ class PageSendMoneyStor {
 
   setTrDate(trDatePage) {
     this.trDate = trDatePage;
-    
   }
 
   getDataForRequest() {

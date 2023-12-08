@@ -1,4 +1,6 @@
 .list{
+    height: 100%;
+    padding-bottom: 100px;
     .row{
         padding-right: 0;
         padding-left: 0;
@@ -6,7 +8,7 @@
     .list-transactions{
         display: flex;
         justify-content: space-between;
-        margin: 7px 0px;
+        margin: 7px 2px;
         padding-bottom: 5px;
         .avatar-transactions{
             img{
@@ -44,7 +46,7 @@
             padding-top: 3%;
             text-align: right;
             color: #000;
-            font-size: 16px;
+            font-size: 15px;
             font-style: normal;
             font-weight: 600;
             line-height: 24px; /* 150% */

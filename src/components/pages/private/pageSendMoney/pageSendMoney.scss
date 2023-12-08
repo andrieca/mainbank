@@ -1,4 +1,13 @@
+
+.label{
+    color: #1A1A1A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px; /* 150% */
+}
 .listSendMoney{
+
     form{
         margin-top: 50px;
         input{
@@ -12,16 +21,10 @@
             border: 1px solid #F8BB18;
             color: #F8BB18;
         }
-        footer{
-            margin-top: 100px;
-        }
-        label{
-            color: #1A1A1A;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 21px; /* 150% */
-        }
+        // footer{
+        //     margin-top: 100px;
+        // }
+    
         .footer-form{
             display: flex;
             justify-content: space-between;

@@ -1,14 +1,9 @@
-
-
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import pageContactsStore from '../pageContacts/PageContactsStore';
-import PrimaryBtnYellow from '../../../designComponents/PrimaryBtnYellow';
 import sendIcon from "../../../../assets/contactsImg/send_button.svg";
 import { useParams } from "react-router-dom";
 import back_icon from "../../../../assets/navImg/back_icon.svg";
-
-// import pageSendMoneyStor from './PageSendMoneyStor';
 import { useForm } from 'react-hook-form';
 import HeaderPrivat from "../../../pages/partials/header/HeaderPrivate";
 import axios from "axios"
@@ -22,11 +17,16 @@ const PageRequestView = observer((props) => {
     const destination = "/contacts";
 
 
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+
+
     const styleBtn = {
         borderRadius: "10px",
         backgroundColor: "#1A87DD",
         padding: "13px",
-        // marginTop: '5px',
         color: "#FFF",
         textTransform: 'none',
         textAlign: "center",
@@ -43,6 +43,7 @@ const PageRequestView = observer((props) => {
                 console.log("sendMoneyV", item)
                 pageRequestStor.addUserContact(item);
                 pageRequestStor.userId = id; // Збереження ID користувача
+                pageRequestStor.setTrDate(`${formattedDate}  ${hours}:${minutes}`);
             }
         });
     }, [id]);
@@ -107,7 +108,7 @@ const PageRequestView = observer((props) => {
                             className="form-control"
                             id="exampleFormControlTextarea1"
                             {...register("trDate")}
-                            onChange={(e) => pageRequestStor.setTrDate(e.target.value)}
+                            defaultValue={`${formattedDate}  ${hours}:${minutes}`}
                             placeholder="Date"
                             rows="3"></textarea>
                     </div>

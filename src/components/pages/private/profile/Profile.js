@@ -1,11 +1,9 @@
 import { observer } from "mobx-react";
-import { Link } from "react-router-dom";
 import profileStore from "./ProfileStore";
 import React, { useEffect } from "react";
 import "./profile.scss";
 import ModalProfileView from "../../partials/modal/ModalProfileView";
-import NavBtn from "../../../designComponents/NavBtn";
-import HeaderPrivate from "../../partials/header/HeaderPrivate";
+
 
 
 
@@ -31,11 +29,14 @@ const Profile = observer(() => {
 
   return (
     <div className="page-profile">
-      <div className="row page-profile-header">
-        <div className="col-2"></div>
-        <div className="col tittel">My Profile</div>
-        <div className="col-2 btn"><ModalProfileView /></div>
+      <div className="container">
+        <div className="row page-profile-header">
+          <div className="col-2"></div>
+          <div className="col tittel">My Profile</div>
+          <div className="col-2 btn"><ModalProfileView /></div>
+        </div>
       </div>
+
       <div className="page-profile-main">
         <div className="box-avatar"><img className="avatar" src={profileStore.avatar} alt="profile" /></div>
         <div className="full-name">{profileStore.fullName}</div>

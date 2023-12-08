@@ -27,6 +27,7 @@ import PageAllRequests from "./pages/private/pageAllRequests/PageAllRequests";
 import PagesendMoneySearch from "./pages/private/pageSendMoney/PagesendMoneySearch";
 import PageRequestSearch from "./pages/private/pageRequestMoney/PageRequestSearch";
 import PageSendRequests from "./pages/private/pageSendMoney/PageSendRequests";
+import PageCard from "./pages/private/pageCard/PageCard";
 
 
 function App() {
@@ -118,6 +119,7 @@ function App() {
         <Route path="/request_money/:id" element={<PageRequestView />} />
         <Route path="/request_money" element={<PageRequestSearch />} />
         <Route path="/requests" element={<PageAllRequests />} />
+        <Route path="/card" element={<PageCard/>}/>
         <Route element={<ErrorLayout />}>
           <Route path="*" element={<ErrorPage />} />
         </Route>

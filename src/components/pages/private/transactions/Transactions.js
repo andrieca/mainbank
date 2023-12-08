@@ -1,6 +1,4 @@
 import { observer } from "mobx-react";
-import { useEffect } from "react";
-import profileStore from "../profile/ProfileStore";
 import transactStor from "./TransactStor";
 import "./transactions.scss";
 import sendIcon from "../../../../assets/dashbordImg/send_icon.svg";
@@ -14,7 +12,7 @@ import defolte_avatar from "../../../../assets/defolte_avatar.jpg";
 const Transactions = observer((props) => {
 
     return (
-        <div>
+        <div className="container">
             <div className='send-request'>
                 <div className='row'>
                     <div className='col' style={{ padding: " 0 auto" }}>

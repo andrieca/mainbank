@@ -1,18 +1,11 @@
-
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
-import pageContactsStore from '../pageContacts/PageContactsStore';
-import PrimaryBtnYellow from '../../../designComponents/PrimaryBtnYellow';
 import sendIcon from "../../../../assets/contactsImg/send_button.svg";
-import { useNavigate, useParams } from "react-router-dom";
 import back_icon from "../../../../assets/navImg/back_icon.svg";
 import "./pageSendMoney.scss";
-import pageSendMoneyStor from './PageSendMoneyStor';
 import { useForm } from 'react-hook-form';
 import HeaderPrivat from "../../../pages/partials/header/HeaderPrivate";
 import axios from "axios"
-import InputSearch from '../../../designComponents/InputSearch';
 import ModalMoney from '../../partials/modalMoney/ModalMoney';
 import { useLocation } from 'react-router-dom';
 import pageSendRequestsStor from './PageSendRequestsStor';
@@ -28,7 +21,6 @@ const PageSendRequests = observer((props) => {
         borderRadius: "10px",
         backgroundColor: "#F8BB18",
         padding: "13px",
-        // marginTop: '5px',
         color: "#1A1A1A",
         textTransform: 'none',
         textAlign: "center",
@@ -39,12 +31,17 @@ const PageSendRequests = observer((props) => {
         width: "100%",
     }
 
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
 
     useEffect(() => {
         pageSendRequestsStor.setUserName(resivetData.userName);
         pageSendRequestsStor.setUserAvatar(resivetData.userAvatar);
-        pageSendRequestsStor.setAmount(resivetData.amount)
-    })
+        pageSendRequestsStor.setAmount(resivetData.amount);
+        pageSendRequestsStor.setTrDate(`${formattedDate}  ${hours}:${minutes}`);
+    }, [])
 
     useEffect(() => {
         setValue('amount', resivetData.amount);
@@ -78,9 +75,6 @@ const PageSendRequests = observer((props) => {
             });
 
     };
-    // const handleChange = (value) => {
-    //     setSearchText(value); // Оновлення тексту пошуку при зміні значення
-    // };
 
     return (
         <div className='container'>
@@ -112,8 +106,8 @@ const PageSendRequests = observer((props) => {
                             className="form-control"
                             id="exampleFormControlTextarea1"
                             {...register("trDate")}
-                            onChange={(e) => pageSendRequestsStor.setTrDate(e.target.value)}
                             placeholder="Date"
+                            defaultValue={`${formattedDate}  ${hours}:${minutes}`}
                             rows="3"></textarea>
                     </div>
                     <footer className="footer-form">

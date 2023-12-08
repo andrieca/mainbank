@@ -46,7 +46,6 @@ const ModalProfileView = () => {
           return respons.json()
       })
     console.log('Edited data:', editedData);
-    // Оновлення локального стану
     setEditedData({ ...editedData });
    
   };
@@ -61,8 +60,6 @@ const ModalProfileView = () => {
         userData={userData}
         onSubmit={handleProfileEdit}
       />
-      
-      {/* Інші елементи вашого компоненту */}
     </div>
   );
 };

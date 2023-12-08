@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import pageContactsStore from '../pageContacts/PageContactsStore';
-import PrimaryBtnYellow from '../../../designComponents/PrimaryBtnYellow';
 import sendIcon from "../../../../assets/contactsImg/send_button.svg";
 import { useParams } from "react-router-dom";
 import back_icon from "../../../../assets/navImg/back_icon.svg";
@@ -12,22 +11,26 @@ import pageSendMoneyStor from './PageSendMoneyStor';
 import { useForm } from 'react-hook-form';
 import HeaderPrivat from "../../../pages/partials/header/HeaderPrivate";
 import axios from "axios"
-import InputSearch from '../../../designComponents/InputSearch';
 import ModalMoney from '../../partials/modalMoney/ModalMoney';
-import { useLocation } from 'react-router-dom';
 
 const PagesendMoneyView = observer((props) => {
-   
+
     const { id } = useParams();
     const { handleSubmit, reset, register } = useForm();
     const destination = "/contacts";
     const [searchText, setSearchText] = useState("");
 
+
+
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+
     const styleBtn = {
         borderRadius: "10px",
         backgroundColor: "#F8BB18",
         padding: "13px",
-        // marginTop: '5px',
         color: "#1A1A1A",
         textTransform: 'none',
         textAlign: "center",
@@ -49,6 +52,7 @@ const PagesendMoneyView = observer((props) => {
     }, [id]);
 
     const onSubmit = (data) => {
+        pageSendMoneyStor.setTrDate(`${formattedDate}  ${hours}:${minutes}`);
         const requestData = pageSendMoneyStor.getDataForRequest();
         if (!requestData) {
             console.error("User data not found");
@@ -68,18 +72,18 @@ const PagesendMoneyView = observer((props) => {
             .then((response) => {
                 console.log("Response data:", response.data);
                 reset();
+                // pageSendMoneyStor.clearUserContact();
             })
             .catch((error) => {
                 console.error('There was a problem with the axios operation:', error);
                 alert('Помилка аутентифікації: ' + error.message);
             });
-   
+
     };
     const handleChange = (value) => {
         setSearchText(value); // Оновлення тексту пошуку при зміні значення
     };
 
-    // Фільтруємо користувачів за текстом пошуку
     const filteredUsers = pageContactsStore.users.filter((user) =>
         user.username.toLowerCase().includes(searchText.toLowerCase())
     );
@@ -117,18 +121,18 @@ const PagesendMoneyView = observer((props) => {
                             className="form-control"
                             id="exampleFormControlTextarea1"
                             {...register("trDate")}
-                            onChange={(e) => pageSendMoneyStor.setTrDate(e.target.value)}
+                            defaultValue={`${formattedDate}  ${hours}:${minutes}`}
                             placeholder="Date"
                             rows="3"></textarea>
                     </div>
                     <footer className="footer-form">
-                    <ModalMoney
-                        style={styleBtn} 
-                        text="Send Payment" 
-                        textP="The amount has been requested successfully!"
-                        iconM={<img src={sendIcon} alt='pay'/>}
-                        type="submit"
-                       />
+                        <ModalMoney
+                            style={styleBtn}
+                            text="Send Payment"
+                            textP="The amount has been requested successfully!"
+                            iconM={<img src={sendIcon} alt='pay' />}
+                            type="submit"
+                        />
                     </footer>
                 </form>
             </div>

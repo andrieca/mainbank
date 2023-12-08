@@ -8,7 +8,7 @@ function InputSearch(props) {
     const [searchValue, setSearchValue] = useState(""); // Стан для зберігання введеного значення
 
     const styleInputSearch = {
-        borderRadius: "15px",
+        borderRadius: "10px",
         padding: "10px",
         background: searchValue ? "transparent" : "#FFF",
     }

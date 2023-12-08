@@ -8,43 +8,31 @@ class PageSendRequestsStor {
   userAvatar = "";
   trDate = "";
   trType = "out";
-  
 
-//   userContact = [];
 
   constructor() {
     makeAutoObservable(this);
   }
 
-//   addUserContact(item) {
-//     this.userContact.push(item);
-//     console.log("sendContact", this.userContact)
-   
-//   }
-  setUserName(userName){
+  setUserName(userName) {
     this.userName = userName;
-    console.log("setUserName", this.userName)
   }
 
-  setUserAvatar(userAvatar){
+  setUserAvatar(userAvatar) {
     this.userAvatar = userAvatar;
-    console.log("setUserAvatar", this.userAvatar)
   }
-
 
   setAmount(amountPage) {
     this.amount = amountPage;
-    
   }
 
   setTrDate(trDatePage) {
     this.trDate = trDatePage;
-    
   }
 
   getDataForRequest() {
-   
-     
+
+
     return {
       amount: +this.amount,
       userName: this.userName,
