@@ -39,8 +39,6 @@ class TransactStor {
   }
 
   resetFilters() {
-    // this.viewAll = true;
-    // this.filterTransactions();
     this.setViewIn(true);
   }
 

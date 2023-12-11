@@ -42,7 +42,7 @@ const PageRequestView = observer((props) => {
             if (item._id === id) {
                 console.log("sendMoneyV", item)
                 pageRequestStor.addUserContact(item);
-                pageRequestStor.userId = id; // Збереження ID користувача
+                pageRequestStor.userId = id; 
                 pageRequestStor.setTrDate(`${formattedDate}  ${hours}:${minutes}`);
             }
         });

@@ -31,7 +31,6 @@ const PasswordInput = ({ value, onChange }) => {
         onChange={onChange}
         placeholder="Enter your password" />
       <button onClick={handleTogglePassword}>
-        {/* {showPassword ? `${<img src={show} alt='pay'/>}`: 'Show'} */}
         <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
       </button>
     </div>
@@ -101,7 +100,6 @@ const SignUp = observer(() => {
                 />
 
                 <button onClick={() => setShowPassword(!showPassword)}>
-                  {/* {showPassword ? 'Hide' : 'Show'} */}
                   <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
                 </button>
               </div>
@@ -120,7 +118,6 @@ const SignUp = observer(() => {
                 />
 
                 <button onClick={() => setShowPassword(!showPassword)}>
-                  {/* {showPassword ? 'Hide' : 'Show'} */}
                   <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
                 </button>
               </div>

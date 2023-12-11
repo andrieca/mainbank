@@ -1,15 +1,14 @@
 .input-container {
     position: relative;
-    /* Додайте стилі, що вам підходять для розміщення */
+   
 }
 
 .input-container input {
-    padding-left: 30px; /* Задайте відступ зліва, щоб зображення не перекривало введене значення */
+    padding-left: 30px; 
 }
 
 .search-icon {
     position: absolute;
-    left: 30px; /* Додайте власні стилі для розміщення зображення */
+    left: 30px; 
     transform: translateY(-165%);
-    /* Додайте інші стилі, які вам потрібні для зображення */
 }

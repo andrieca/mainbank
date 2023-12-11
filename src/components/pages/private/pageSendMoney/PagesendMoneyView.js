@@ -46,7 +46,7 @@ const PagesendMoneyView = observer((props) => {
             if (item._id === id) {
                 console.log("sendMoneyV", item)
                 pageSendMoneyStor.addUserContact(item);
-                pageSendMoneyStor.userId = id; // Збереження ID користувача
+                pageSendMoneyStor.userId = id; 
             }
         });
     }, [id]);

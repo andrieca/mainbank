@@ -33,7 +33,6 @@ const ModalProfileView = () => {
 
   const handleProfileEdit = (editedData) => {
     const token = localStorage.getItem("jwt")
-    // Відправка відредагованих даних на сервер
     fetch("http://49.13.31.246:9191/me", {
       method: "PUT",
       headers: {

@@ -34,11 +34,10 @@ const PageContactsView = observer(() => {
     }, [])
 
     const handleChange = (value) => {
-        setSearchText(value); // Оновлення тексту пошуку при зміні значення
+        setSearchText(value); 
         console.log("searchText", searchText)
     };
 
-    // Фільтруємо користувачів за текстом пошуку
     const filteredUsers = pageContactsStore.users.filter((user) =>
         user.username.toLowerCase().includes(searchText.toLowerCase())
     );

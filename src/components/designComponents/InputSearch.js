@@ -5,7 +5,7 @@ import "./inputSearch.scss";
 import pageContactsStore from '../pages/private/pageContacts/PageContactsStore';
 
 function InputSearch(props) {
-    const [searchValue, setSearchValue] = useState(""); // Стан для зберігання введеного значення
+    const [searchValue, setSearchValue] = useState(""); 
 
     const styleInputSearch = {
         borderRadius: "10px",
@@ -15,11 +15,11 @@ function InputSearch(props) {
 
    
     const handleChange = (event) => {
-        props.onChange(event); // Передача об'єкта події батьківському компоненту
+        props.onChange(event); 
     }
     
     const handleInputChange = (event) => {
-        setSearchValue(event.target.value); // Оновлення стану зі значенням поля вводу
+        setSearchValue(event.target.value); 
     }
 
     const handleSelectUser = (selectedUser) => {

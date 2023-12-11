@@ -12,13 +12,6 @@ class PageSendMoneyStor {
 
   userContact = [];
 
-
-   currentDate = new Date();
-   formattedDate = this.currentDate.toLocaleDateString();
-   hours = this.currentDate.getHours();
-   minutes = this.currentDate.getMinutes();
-   
-
   constructor() {
     makeAutoObservable(this);
   }

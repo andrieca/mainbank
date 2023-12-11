@@ -71,17 +71,12 @@ function App() {
   ]
 
   const HomePages = [
-    // {
-    //   element: <Profile />,
-    //   path: '/profile'
-    // },
     {
       element: <Dashbord />,
       path: '/dashbord'
     },
     {
       element: <PageProfileView />,
-      // path: '/my_profile/:id'
       path: '/my_profile'
 
     },
@@ -108,18 +103,14 @@ function App() {
             <Route key={page.path} path={page.path} element={page.element} />
           ))}
         </Route>
-        {/* <Route element={<FooterBtnLayout />}>
-          {PrivateBtnPages.map(page => (
-            <Route key={page.path} path={page.path} element={page.element} />
-          ))}
-        </Route> */}
+
         <Route path="/send_money/:id" element={<PagesendMoneyView />} />
         <Route path="/send_money" element={<PagesendMoneySearch />} />
         <Route path="/send_requests_money" element={<PageSendRequests />} />
         <Route path="/request_money/:id" element={<PageRequestView />} />
         <Route path="/request_money" element={<PageRequestSearch />} />
         <Route path="/requests" element={<PageAllRequests />} />
-        <Route path="/card" element={<PageCard/>}/>
+        <Route path="/card" element={<PageCard />} />
         <Route element={<ErrorLayout />}>
           <Route path="*" element={<ErrorPage />} />
         </Route>

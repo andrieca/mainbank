@@ -111,28 +111,4 @@
 
     }
 
-    .password-toggle {
-        position: relative;
-      }
-      
-      .password-toggle input {
-        padding-right: 30px; /* Щоб залишити місце для іконки */
-      }
-      
-      .toggle-icon {
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
-      
-      .toggle-icon img {
-        width: 20px; /* Розмір вашої іконки */
-        height: auto;
-      }
-      
-      .toggle-icon.hidden {
-        display: none;
-      }
 }

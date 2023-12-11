@@ -11,12 +11,6 @@ import defolte_avatar from "../../../../assets/defolte_avatar.jpg";
 
 const Transactions = observer((props) => {
 
-    // const { transactions } = props;
-
-    // // Відсортуйте транзакції за індексом перед їх передачею до компонента
-    // const sortedTransactions = transactions.slice().sort((a, b) => b.index - a.index);
-    // console.log('sort', sortedTransactions)
-
     return (
         <div className="container">
             <div className='send-request'>

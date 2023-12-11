@@ -46,7 +46,6 @@ const PageRequestSearch = observer(() => {
     };
 
     const handleSearchUser = () => {
-        // Знаходимо користувача за введеним username
         const item = pageContactsStore.users.find(item => item.username === searchedUsername);
         if (item) {
             setSelectedUser(item);

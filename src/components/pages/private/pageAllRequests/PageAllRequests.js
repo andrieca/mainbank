@@ -78,16 +78,3 @@ const PageAllRequests = observer((props) =>{
 export default PageAllRequests;
 
 
-// Событийный цикл (event loop)
-
-// Примеры событий
-
-// Микротаски и макротаски
-
-// Callback
-
-// Promise
-
-// Async / await
-
-// Методы массива

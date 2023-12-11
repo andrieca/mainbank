@@ -45,11 +45,11 @@ class SignIn {
         this.clearErrors();
 
         if (this.username.length < 3) {
-            this.errors.username = 'Имя должно бить более 2х букв'
+            this.errors.username = 'The name must be more than 2 letters'
         }
 
         if (this.password.length < 6) {
-            this.errors.password = 'Ваш пароль меньше 6 символов'
+            this.errors.password = 'Your password is less than 6 characters'
         }
 
         return Object.values(this.errors).every((error) => error === "")
