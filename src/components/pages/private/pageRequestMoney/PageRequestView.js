@@ -67,6 +67,7 @@ const PageRequestView = observer((props) => {
 
             .then((response) => {
                 console.log("Response data:", response.data);
+                pageRequestStor.clearUserContact();
                 reset();
             })
             .catch((error) => {

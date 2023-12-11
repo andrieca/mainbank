@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from "mobx";
+import { observable, action, makeObservable, runInAction } from "mobx";
 
 class TransactStor {
   usersTransactions = [];
@@ -39,8 +39,9 @@ class TransactStor {
   }
 
   resetFilters() {
-    this.viewAll = true;
-    this.filterTransactions();
+    // this.viewAll = true;
+    // this.filterTransactions();
+    this.setViewIn(true);
   }
 
   filterTransactions() {

@@ -27,9 +27,9 @@ class PageSendMoneyStor {
     this.userContact.push(item); 
   }
 
-  // clearUserContact() {
-  //   this.userContact = [];
-  // }
+  clearUserContact() {
+    this.userContact = [];
+  }
 
   setAmount(amountPage) {
     this.amount = amountPage;

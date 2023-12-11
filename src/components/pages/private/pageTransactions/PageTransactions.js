@@ -64,8 +64,8 @@ const PageTransactions = observer(() => {
 
             <div className="list">
 
-                {transactStor.filteredTransactions.map((item) => (
-                    <div className="row list-transactions" key={item._id} >
+                {transactStor.filteredTransactions.slice().reverse().map((item) => (
+                    <div className="row list-transactions" key={Math.random()} >
                         <div className="col-auto avatar-transactions">
                             <img src={item.userAvatar} alt="avatar" onError={(e) => {
                                 e.target.src = defolte_avatar;

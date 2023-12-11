@@ -84,7 +84,7 @@ const SignInView = observer(() => {
                 onClick={handleTogglePassword}
                 type='button'>
 
-                  <img src={hide} alt='Show'/>
+                  <img src={show} alt='Show'/>
                 </button>
               </div>
 

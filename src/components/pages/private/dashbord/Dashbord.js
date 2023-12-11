@@ -63,7 +63,7 @@ const Dashbord = observer(() => {
                     <div className='dashbord-balance'>
                         <h1>${profileStore.balance}</h1>
                         <Link to="/requests"><button onClick={deleteNotifications}>
-                            <Badge badgeContent={profileStore.notifications.length} classes={{ badge: 'custom-badge' }} color="secondary">
+                            <Badge badgeContent={profileStore.notifications.length} classes={{ badge: 'custom-badge' }} >
                                 <img src={notifications_icon} alt='icon' />
                             </Badge>
                         </button></Link>

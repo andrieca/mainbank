@@ -19,6 +19,10 @@ class PageRequestStor {
    
   }
 
+  clearUserContact() {
+    this.userContact = [];
+  }
+
   setAmount(amountPage) {
     this.amount = amountPage;
     

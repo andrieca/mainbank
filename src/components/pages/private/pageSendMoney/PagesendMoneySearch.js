@@ -83,7 +83,7 @@ const PagesendMoneySearch = observer((props) => {
             .then((response) => {
                 console.log("Response data:", response.data);
                 reset();
-                // pageSendMoneyStor.clearUserContact();
+                pageSendMoneyStor.clearUserContact();
             })
             .catch((error) => {
                 console.error('There was a problem with the axios operation:', error);

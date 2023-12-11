@@ -11,6 +11,12 @@ import defolte_avatar from "../../../../assets/defolte_avatar.jpg";
 
 const Transactions = observer((props) => {
 
+    // const { transactions } = props;
+
+    // // Відсортуйте транзакції за індексом перед їх передачею до компонента
+    // const sortedTransactions = transactions.slice().sort((a, b) => b.index - a.index);
+    // console.log('sort', sortedTransactions)
+
     return (
         <div className="container">
             <div className='send-request'>
@@ -41,11 +47,11 @@ const Transactions = observer((props) => {
 
             <div className="list">
 
-                {props.transactions.map((item) => {
+                {props.transactions.slice().reverse().map((item) => {
                     if (item.trType === "in" || item.trType === "out") {
                         return (
 
-                            <div className="row list-transactions" key={item.tradingCode} >
+                            <div className="row list-transactions" key={Math.random()} >
                                 <div className="col-auto avatar-transactions">
                                     <img
                                         src={item.userAvatar}
