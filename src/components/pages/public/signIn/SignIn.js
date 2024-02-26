@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { observer } from 'mobx-react';
+import { useNavigate } from 'react-router-dom';
 import signIn from './SignInStore';
 import "../signIn/signIn.scss";
 import show from "../../../../assets/signInImg/view_icon.svg";
@@ -9,6 +10,8 @@ import hide from "../../../../assets/signInImg/eye-slash.svg"
 
 const SignInView = observer(() => {
   const { register, handleSubmit, watch, reset } = useForm();
+  // const [ error , setError] = useState("");
+  // const history = useNavigate();
 
   const handleTogglePassword = () => {
     const showBtn = document.querySelector(".password_button");
@@ -40,6 +43,7 @@ const SignInView = observer(() => {
           localStorage.setItem('jwt', result.token);
           window.location.href = '/dashbord';
           reset();
+          // history.push('/dashbord');
         })
 
         .catch((error) => {
@@ -79,15 +83,13 @@ const SignInView = observer(() => {
                   onChange={(e) => signIn.setPassword(e.target.value)}
                 />
 
-                <button 
-                className='password_button' 
-                onClick={handleTogglePassword}
-                type='button'>
-
-                  <img src={show} alt='Show'/>
+                <button
+                  className='password_button'
+                  onClick={handleTogglePassword}
+                  type='button'>
+                  <img src={show} alt='Show' />
                 </button>
               </div>
-
               {signIn.errors.password && <p>{signIn.errors.password}</p>}
             </div>
             <div className='signBtn'>

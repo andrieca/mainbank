@@ -52,15 +52,15 @@ class SignUpStore{
     validateForm(){
         this.clearErrors();
 
-        if(this.username.length < 3){
+        if(this.username && this.username.length < 3){
             this.errors.username = 'Имя должно бить более 2х букв'
         }
 
-        if(this.password.length < 6){
+        if(this.password && this.password.length < 6){
             this.errors.password = 'Ваш пароль меньше 6 символов'
         }
 
-        if(this.confirm_password.length < 6){
+        if(this.confirm_password && this.confirm_password.length < 6){
             this.errors.confirm_password = 'Ваш пароль меньше 6 символов'
         }
 

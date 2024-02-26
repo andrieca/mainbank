@@ -64,21 +64,41 @@ const PageTransactions = observer(() => {
 
             <div className="list">
 
-                {transactStor.filteredTransactions.slice().reverse().map((item) => (
-                    <div className="row list-transactions" key={Math.random()} >
-                        <div className="col-auto avatar-transactions">
-                            <img src={item.userAvatar} alt="avatar" onError={(e) => {
-                                e.target.src = defolte_avatar;
-                            }} />
-                        </div>
-                        <div className="col bio-transactions">
-                            <span className="username">{item.userName}</span>
-                            <span className="date">{item.trDate}</span>
-                        </div>
-                        <div className="col balans-transactions"><span>{item.trType === "in" ? "+" : "-"}</span>${item.amount}</div>
+                {transactStor.filteredTransactions.slice().reverse().map((item) => {
+                    if (item.trType === "in" || item.trType === "out") {
+                        return (
+                            <div className="row list-transactions" key={Math.random()} >
+                                <div className="col-auto avatar-transactions">
+                                    <img src={item.userAvatar} alt="avatar" onError={(e) => {
+                                        e.target.src = defolte_avatar;
+                                    }} />
+                                </div>
+                                <div className="col bio-transactions">
+                                    <span className="username">{item.userName}</span>
+                                    <span className="date">{item.trDate}</span>
+                                </div>
+                                <div className="col balans-transactions"><span>{item.trType === "in" ? "+" : "-"}</span>${item.amount}</div>
+        
+                            </div>
+                        )
+                    }
+                }
+                //  (
+                //     <div className="row list-transactions" key={Math.random()} >
+                //         <div className="col-auto avatar-transactions">
+                //             <img src={item.userAvatar} alt="avatar" onError={(e) => {
+                //                 e.target.src = defolte_avatar;
+                //             }} />
+                //         </div>
+                //         <div className="col bio-transactions">
+                //             <span className="username">{item.userName}</span>
+                //             <span className="date">{item.trDate}</span>
+                //         </div>
+                //         <div className="col balans-transactions"><span>{item.trType === "in" ? "+" : "-"}</span>${item.amount}</div>
 
-                    </div>
-                ))}
+                //     </div>
+                // )
+                )}
             </div>
         </div>
     );

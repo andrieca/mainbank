@@ -38,7 +38,9 @@ const Profile = observer(() => {
       </div>
 
       <div className="page-profile-main">
-        <div className="box-avatar"><img className="avatar" src={profileStore.avatar} alt="profile" /></div>
+        <div className="box-avatar">
+          <img className="avatar" src={profileStore.avatar} alt="profile" />
+          </div>
         <div className="full-name">{profileStore.fullName}</div>
       </div>
     </div>

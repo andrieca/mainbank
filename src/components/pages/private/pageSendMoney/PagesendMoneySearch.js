@@ -42,7 +42,7 @@ const PagesendMoneySearch = observer((props) => {
   
     const handleSearchInputChange = (event) => {
         const newValue = event.target.value;
-        console.log('newValue:', newValue); // Виведення в консоль для перевірки значення
+        console.log('newValue:', newValue); 
         setSearchedUsernameSend(newValue);
         console.log("searchedUser", searchedUsernameSend)
     };

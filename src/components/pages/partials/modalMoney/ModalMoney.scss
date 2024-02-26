@@ -13,11 +13,22 @@
     
 }
 
-.img-modal.money{
+.img-modal-money{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
 }
  .custom-label {
     // margin: 0 auto;
     padding: 0 30px;
+ }
+ .div-modal-money{
+    text-align: center;
+ }
+ .a{
+    width: 100%;
+    .modal-btn{
+        width: 100%;
+    }
  }

@@ -14,32 +14,41 @@ import signUpStore from './SignUpStore';
 
 
 
-const PasswordInput = ({ value, onChange }) => {
-  const [showPassword, setShowPassword] = useState(false);
+// const PasswordInput = ({ value, onChange }) => {
+//   const [showPassword, setShowPassword] = useState(false);
 
 
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
-  };
+//   const handleTogglePassword = () => {
+//     setShowPassword(!showPassword);
+//   };
 
-  return (
-    <div className='input-show' style={{ display: 'flex' }}>
-      <input
-        type={showPassword ? 'text' : 'password'}
-        value={value}
-        name='password'
-        onChange={onChange}
-        placeholder="Enter your password" />
-      <button onClick={handleTogglePassword}>
-        <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
-      </button>
-    </div>
-  );
-};
+//   return (
+//     <div className='input-show' style={{ display: 'flex' }}>
+//       <input
+//         type={showPassword ? 'text' : 'password'}
+//         value={value}
+//         name='password'
+//         onChange={onChange}
+//         placeholder="Enter your password" />
+//       <button onClick={handleTogglePassword}>
+//         <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
+//       </button>
+//     </div>
+//   );
+// };
 
 const SignUp = observer(() => {
   const { register, handleSubmit, watch, reset } = useForm();
-  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    const showBtn = document.querySelector(".password_button");
+    const showBtnImg = showBtn.querySelector("img");
+    const passwordInput = document.querySelector(".password_input");
+
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    showBtnImg.src = passwordInput.type === "password" ? show : hide;
+
+  };
 
   const submitedData = (data) => {
     if (signUpStore.validateForm()) {
@@ -59,7 +68,7 @@ const SignUp = observer(() => {
         .then((result) => {
           console.log("data", result);
           localStorage.setItem('jwt', result.token);
-          window.location.href = '/dashbord';
+          window.location.href = '/signin';
           reset();
         })
 
@@ -90,7 +99,7 @@ const SignUp = observer(() => {
             </div>
             <div className="user-box">
               <label>Password</label>
-              <div>
+              <div className='input-show'>
                 <input
                   type="password"
                   placeholder="Enter your password"
@@ -99,8 +108,11 @@ const SignUp = observer(() => {
                   onChange={(e) => signUpStore.setPassword(e.target.value)}
                 />
 
-                <button onClick={() => setShowPassword(!showPassword)}>
-                  <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
+                <button
+                  className='password_button'
+                  onClick={handleTogglePassword}
+                  type='button'>
+                  <img src={show} alt='Show' />
                 </button>
               </div>
 
@@ -108,7 +120,7 @@ const SignUp = observer(() => {
             </div>
             <div className="user-box">
               <label>Password</label>
-              <div>
+              <div className='input-show'>
                 <input
                   type="password"
                   placeholder="Confirm password"
@@ -117,18 +129,21 @@ const SignUp = observer(() => {
                   onChange={(e) => signUpStore.setConfirmPassword(e.target.value)}
                 />
 
-                <button onClick={() => setShowPassword(!showPassword)}>
-                  <img src={showPassword ? hide : show} alt={showPassword ? 'Hide' : 'Show'} />
+                <button
+                  className='password_button'
+                  onClick={handleTogglePassword}
+                  type='button'>
+                  <img src={show} alt='Show' />
                 </button>
               </div>
               {signUpStore.errors.confirm_password && <p>{signUpStore.errors.confirm_password}</p>}
             </div>
             <div className='signBtn'>
-              <button type="submit">Login</button>
+              <button type="submit">Create account</button>
             </div>
             <div className='sign-a'>
               <a href='#home'>
-                <p className='sign-a'>Create new account</p>
+                <p className='sign-a'>Already have account?</p>
               </a>
             </div>
           </form>

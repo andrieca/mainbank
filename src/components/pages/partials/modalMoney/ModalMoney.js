@@ -48,16 +48,16 @@ const ModalMoney = ({style, iconM, text, textP}) => {
       <Modal.Body>
         <Form>
           <Form.Group >
-            <Form.Label><img className="img-" src={send_illustration} alt="pay"/>
-            <div>{textP}</div>
+            <Form.Label className="img-modal-money"><img className="img-" src={send_illustration} alt="pay"/>
+            <div className="div-modal-money">{textP}</div>
             </Form.Label>
           </Form.Group>
 
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Link to="/dashbord">
-        <Button variant="primary" onClick={handleCloseEditModal}>
+        <Link className="a" to="/dashbord">
+        <Button className="modal-btn" variant="primary" onClick={handleCloseEditModal}>
         Ok, Thanks!
         </Button>
         </Link>

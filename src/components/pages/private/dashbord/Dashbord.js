@@ -44,9 +44,8 @@ const Dashbord = observer(() => {
         });
     }
 
-
     return (
-        <div >
+        <div>
             <div className='dashbord-profile'>
                 <div className='dashbord-profile-container'>
                     <div className='dashbord'>
